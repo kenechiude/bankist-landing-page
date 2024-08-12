@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/png" href="img/icon.png" />
+
+    <title>Bankist | When Banking meets minimalism</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jacquard+12&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <img src="img/logo.png" alt="Bankist Logo" />
+        <ul class="nav__links">
+          <li>
+            <a href="#section--1" class="nav__link">Features</a>
+          </li>
+          <li>
+            <a href="#section--2" class="nav__link">Operations</a>
+          </li>
+          <li>
+            <a href="#section--3" class="nav__link">Testimonials</a>
+          </li>
+          <li>
+            <p class="modal-open--btn nav__link" href="">Open account</p>
+          </li>
+        </ul>
+      </nav>
+      <div class="header--title">
+        <div>
+          <h1 class="heading--primary">When banking meets minimalist</h1>
+          <p class="heading--secondary">
+            A simpler banking experience for a simpler life.
+          </p>
+          <a href="" class="learn-more">Learn More &dArr;</a>
+        </div>
+        <img src="img/hero.png" alt="" />
+      </div>
+    </header>
+    <div class="modal-window hidden"></div>
+    <div class="modal hidden">
+      <div class="modal-div">
+        <button class="x--btn">×</button>
+        <p class="heading--secondary">
+          Open your bank account in just 5 minutes
+        </p>
+        <form action="#">
+          <label for="">First Name</label>
+          <input type="text" />
+          <label for="">Last Name</label>
+          <input type="text" />
+          <label for="">Email Address</label>
+          <input type="text" />
+          <button class="modal-open--btn">Next Step &rAarr;</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="script.js"></script>
