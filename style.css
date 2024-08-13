@@ -21,12 +21,13 @@
 }
 html {
   font-size: 62.5%;
-  font-family: Montserrat;
+  font-family: Montserrat, "Poppins", sans-serif;
   color: var(--text-color);
 }
 header {
   padding: 0 4rem 0rem 4rem;
   background-color: var(--bg-color);
+  height: 100vh;
 }
 .nav {
   display: flex;
@@ -35,7 +36,7 @@ header {
 }
 .nav.sticky {
   position: fixed;
-  background-color: #ffffff4b;
+  background-color: #fffffff6;
   width: 100%;
   left: 0;
   padding: 2.4rem 4.8rem 2.4rem 4.8rem;
@@ -69,7 +70,7 @@ a {
 }
 .header--title {
   margin: 0 auto;
-  padding-bottom: 12rem;
+  padding-bottom: 18rem;
   max-width: 120rem;
   display: flex;
   align-items: center;
@@ -80,6 +81,10 @@ a {
   margin-bottom: 3.2rem;
 }
 .heading--secondary {
+  font-size: 3.2rem;
+  margin-bottom: 3.2rem;
+}
+.heading--tertiary {
   font-size: 2.4rem;
   font-weight: 600;
   margin-bottom: 3.2rem;
@@ -109,6 +114,7 @@ a {
   z-index: 101;
   width: 100%;
   height: 100%;
+  transition: 0.25s all;
 }
 .modal {
   position: fixed;
@@ -120,6 +126,7 @@ a {
   max-width: 55rem;
   border-radius: 5px;
   transform: translate(-50%, -50%);
+  transition: 0.25s all;
 }
 .modal-div {
   position: relative;
@@ -165,5 +172,69 @@ input {
 }
 
 .hidden {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
+.section--hidden {
+  opacity: 0;
+  transform: translateY(8rem);
+}
+.section--bg {
+  background-color: var(--bg-color);
+  border-top: 1px solid #9695958c;
+}
+.section {
+  padding: 0 6rem 0 6rem;
+  transition: opacity 1.25s, transform 1.25s;
+}
+.container {
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 18rem 0;
+}
+.section-feature-content {
+  margin-bottom: 8rem;
+}
+.section-features span {
+  font-size: 1.8rem;
+  display: block;
+  font-weight: 600;
+  margin-bottom: 2.4rem;
+  color: var(--color-primary);
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 6.4rem;
+}
+.grid > img {
+  width: 100%;
+}
+.features__icon {
+  display: inline-block;
+  margin-bottom: 2.4rem;
+}
+.features__icon div {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  padding: 15px;
+  border-radius: 50%;
+  background-color: var(--color-primary-opacity);
+}
+.features__icon svg {
+  align-self: center;
+  fill: var(--color-primary);
+  width: 2.4rem;
+  height: 2.4rem;
+}
+.features__header {
+  font-size: 1.8rem;
+  margin-bottom: 2.4rem;
+}
+
+.features__feature p {
+  font-size: 1.4rem;
+  line-height: 1.8;
 }
