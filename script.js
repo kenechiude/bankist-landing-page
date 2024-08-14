@@ -1,14 +1,16 @@
 "use strict";
 
 const nav = document.querySelector(".nav");
-const modalBtns = document.querySelectorAll(".modal-open--btn");
 const modalWindow = document.querySelector(".modal-window");
 const modal = document.querySelector(".modal");
 const cancelBtn = document.querySelector(".x--btn");
 const learnMore = document.querySelector(".learn-more");
 const section1 = document.querySelector("#section--1");
 const header = document.querySelector("header");
+
+const modalBtns = document.querySelectorAll(".modal-open--btn");
 const sections = document.querySelectorAll(".section");
+const lazyImgs = document.querySelectorAll(".lazy-img");
 
 const navHeight = nav.getBoundingClientRect().height;
 
@@ -81,7 +83,7 @@ learnMore.addEventListener("click", function (e) {
 function sectObserverCallBack(entries) {
   const [entry] = entries;
   if (entry.isIntersecting) entry.target.classList.remove("section--hidden");
-  // sectionObserver.unobserve(entry.target);
+  observer.unobserve(entry.target);
 }
 
 const sectionObserver = new IntersectionObserver(sectObserverCallBack, {
@@ -92,4 +94,27 @@ const sectionObserver = new IntersectionObserver(sectObserverCallBack, {
 sections.forEach(function (section) {
   section.classList.add("section--hidden");
   sectionObserver.observe(section);
+});
+
+// Lazy Loading
+const lazyLoader = function (entries) {
+  const [entry] = entries;
+  if (!entry.isIntersecting) return;
+  entry.target.src = entry.target.dataset.src;
+
+  // For better performance
+  entry.target.addEventListener("load", function () {
+    entry.target.classList.remove("lazy-img");
+  });
+  observe.unobserve(entry.target);
+};
+
+const imgObserver = new IntersectionObserver(lazyLoader, {
+  root: null,
+  threshold: 0,
+  rootMargin: "200px",
+});
+
+lazyImgs.forEach(function (img) {
+  imgObserver.observe(img);
 });
