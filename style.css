@@ -182,6 +182,9 @@ input {
 .lazy-img {
   filter: blur(8px);
 }
+.content-hidden {
+  display: none;
+}
 
 .section--bg {
   background-color: var(--bg-color);
@@ -199,8 +202,9 @@ input {
 .section-feature-content {
   margin-bottom: 8rem;
 }
-.section-features span {
+.span {
   font-size: 1.8rem;
+  text-transform: uppercase;
   display: block;
   font-weight: 600;
   margin-bottom: 2.4rem;
@@ -241,4 +245,57 @@ input {
 .features__feature p {
   font-size: 1.4rem;
   line-height: 1.8;
+}
+.operations-btn__div {
+  display: flex;
+  justify-content: center;
+  gap: 4.8rem;
+  transform: translateY(2.5rem);
+}
+.operations-btn {
+  border: none;
+  font-size: 1.6rem;
+  padding: 1.5rem 5rem;
+  border-radius: 10rem;
+  transition: 0.25s all;
+  /* margin-top: 4rem; */
+}
+.operations-btn span {
+  margin-right: 10px;
+  font-weight: 600;
+}
+.op-btn__active {
+  transform: translateY(-0.75rem);
+}
+.btn-IT {
+  background-color: var(--color-primary);
+}
+.IT-heading {
+  color: var(--color-primary);
+}
+.btn-IL {
+  background-color: var(--color-secondary);
+}
+.IL-heading {
+  color: var(--color-secondary);
+}
+.btn-IC {
+  background-color: var(--color-tertiary);
+}
+.IC-heading {
+  color: var(--color-tertiary);
+}
+.operations-content__div {
+  padding: 7rem 5rem 5rem 5rem;
+  background-color: #fff;
+}
+.operations-content__heading {
+  font-size: 2.4rem;
+  margin-bottom: 2.4rem;
+  font-weight: 600;
+}
+.p {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  color: #8f8c8c;
 }
