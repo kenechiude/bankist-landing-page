@@ -83,7 +83,7 @@ learnMore.addEventListener("click", function (e) {
 function sectObserverCallBack(entries) {
   const [entry] = entries;
   if (entry.isIntersecting) entry.target.classList.remove("section--hidden");
-  observer.unobserve(entry.target);
+  // observer.unobserve(entry.target);
 }
 
 const sectionObserver = new IntersectionObserver(sectObserverCallBack, {
@@ -106,7 +106,7 @@ const lazyLoader = function (entries) {
   entry.target.addEventListener("load", function () {
     entry.target.classList.remove("lazy-img");
   });
-  observe.unobserve(entry.target);
+  // observe.unobserve(entry.target);
 };
 
 const imgObserver = new IntersectionObserver(lazyLoader, {
@@ -117,4 +117,27 @@ const imgObserver = new IntersectionObserver(lazyLoader, {
 
 lazyImgs.forEach(function (img) {
   imgObserver.observe(img);
+});
+
+// OPerations Section Component
+const operationsBtnContainer = document.querySelector(".operations-btn__div");
+const operationContents = document.querySelectorAll(".operations-content");
+const operationBtns = document.querySelectorAll(".operations-btn");
+
+operationsBtnContainer.addEventListener("click", function (e) {
+  const clicked = e.target.closest(".operations-btn");
+  // console.log(clicked);
+  if (!clicked.classList.contains("operations-btn")) return;
+
+  operationBtns.forEach(function (btn) {
+    btn.classList.remove("op-btn__active");
+  });
+  clicked.classList.add("op-btn__active");
+
+  operationContents.forEach(function (c) {
+    c.classList.add("content-hidden");
+  });
+  document
+    .querySelector(`.content--${clicked.dataset.value}`)
+    .classList.remove("content-hidden");
 });
